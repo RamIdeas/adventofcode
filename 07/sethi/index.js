@@ -11,8 +11,6 @@ function day7( part2 ) {
         NOT: 'Math.pow(2,16) + ~',
     }
     
-    const cache = {};
-    
     const functions = instructions.map( instruction => {
         const sides = instruction.match(/^(.+) -> ([a-z]+)$/);
         const target = sides[2];
@@ -24,6 +22,7 @@ function day7( part2 ) {
     });
     
     const code = `
+        const cache = {};
         ${ functions.join('\n') }
         // override get_b() in Part Two only
         ${ part2 ? '' : '//' } function get_b() { return 956 }
