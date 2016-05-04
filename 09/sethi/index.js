@@ -46,4 +46,4 @@ function day9( findMin ) {
 }
 
 console.log( 'Part One:', day9(true) );
-console.log( 'Part One:', day9(false) );
+console.log( 'Part Two:', day9(false) );
